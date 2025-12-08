@@ -1,11 +1,179 @@
 ---
-import Welcome from '../components/Welcome.astro';
+// src/pages/index.astro
+import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import profileImage from '../assets/images/profile.jpg';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+const currentYear = new Date().getFullYear();
+const profileName = "Joshep Manuel Macha Rutti";
+
+const links = {
+	servicios: "#services",
+	herramientas: "#herramientas",
+	portafolio: "https://joselow.github.io/my_portfolio/",
+	youtube: "https://www.youtube.com/@joselowdev",
+	whatsapp: "https://wa.me/902909009"
+}
+
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={profileName+' | Perfil Personal' }>
+   <section class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 lg:py-0 
+   bg-gradient-to-br from-background to-muted dark:from-gray-900 dark:to-gray-800">
+      <div class="max-w-5xl w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Texto Principal -->
+          <div class="space-y-6 order-2 lg:order-1">
+            <div>
+              <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground dark:text-white text-balance leading-tight mb-2">
+                {profileName}
+              </h1>
+              <p class="text-xl sm:text-2xl text-accent dark:text-cyan-500 font-medium">
+                Orientado al crecimiento y la creación de <b>Soluciones Digitales.</b>
+              </p>
+            </div>
+
+            <div class="space-y-4 text-lg text-foreground/80 dark:text-gray-300 leading-relaxed">
+              <p>
+                Bienvenido a mi espacio digital. Soy un profesional dedicado a construir experiencias digitales con impacto real y crecimiento sostenible. Mi enfoque está en resolver problemas con pensamiento lógico, diseño claro y desarrollo eficiente.
+              </p>
+            </div>
+          </div>
+
+          <!-- Imagen -->
+          <div class="order-1 lg:order-2 flex justify-center">
+            <img
+              src={profileImage.src}
+              alt="Joshep"
+              class="w-full max-w-sm rounded-2xl shadow-lg object-cover dark:shadow-gray-700/50"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Tarjetas -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-background dark:bg-gray-900">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-5xl font-bold text-center text-foreground dark:text-white mb-16">
+          Te invito a conocer mi(s) 
+        </h2>
+
+        <div class="max-w-3xl mx-auto grid grid-cols-1  gap-6">
+          <!-- Card 1: Servicios -->
+           <Card 
+            href={links.servicios}
+            title="Servicios"
+          >
+            <svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            Descubre los servicios que puedo ofrecerte para llevar tus ideas a otro nivel.
+          </Card>
+
+           <Card 
+            href={links.herramientas}
+            title="Herramientas y Aplicaciones Productivas"
+          >
+            <svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            Utiliza mis herramientas que te ayudan a levar tu vida con tranquilidad y productividad.
+          </Card>
+
+          <!-- Card 2: Portafolio -->
+          <Card 
+            href={links.portafolio}
+            title="Portafolio Dev"
+			target="_blank"
+          >
+            <svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 112-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            Conoce mis proyectos y desarrollos en distintos ámbitos.
+          </Card>
+
+		    <Card 
+            href={links.youtube}
+            title="Canal de Youtube"
+			target="_blank"
+          >
+            <svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 112-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            Conoce mis proyectos y desarrollos en distintos ámbitos.
+          </Card>
+
+          <!-- Card 3: Redes Sociales -->
+          <!-- <Card 
+            href="#social"
+            title="Redes Sociales"
+          >
+            <svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            Acompaña mi recorrido profesional en las redes.
+          </Card> -->
+
+          <!-- Card 4: Contacto WhatsApp -->
+          <Card 
+            href={links.whatsapp}
+            title="Contactame por WhatsApp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            Escríbeme directamente (+51 902 909 009)  ¿Tienes una solicitud, propuesta o idea? 
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frase de Cierre -->
+    <section class="pt-0 pb-16 px-4 sm:px-6 lg:px-8 bg-muted ">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class=" text-3xl sm:text-5xl font-bold text-gray-800 dark:text-cyan-400 leading-relaxed text-balance leading-6">
+          " Consigue la vida que imaginas, con enfoque, crecimiento y acción "
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-foreground text-black dark:bg-gray-900 dark:text-white py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <h3 class="text-lg font-bold mb-2">{profileName}</h3>
+            <p class="text-black/70 dark:text-gray-400">© {currentYear}. Desarrollado por JoselowDev</p>
+          </div>
+
+          <div>
+            <nav class="flex flex-wrap gap-6 justify-start md:justify-end">
+              <a href={links.servicios} class="text-black/70 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm">
+                Servicios
+              </a>
+              <a href={links.herramientas }class="text-black/70 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm">
+                Herramientas
+              </a>
+			<a href={links.portafolio} class="text-black/70 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm">
+                Portafolio
+              </a>
+              <a href={links.youtube} class="text-black/70 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm">
+				Canal Youtube
+              </a>
+              <a href={links.whatsapp} class="text-black/70 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm">
+                Contacto
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-2 text-center text-black/60 dark:text-gray-500 text-sm">
+        </div>
+      </div>
+    </footer>
 </Layout>
