@@ -1,8 +1,10 @@
 ---
 title: "SEO"
 excerpt: "Mejoro tu posicionamiento."
-cover: "/services/seo.jpg"
-order: 1
+icon: "💻"
+featuredImage: "/images/services/web-design.jpg"
+order: 2
+star: false
 ---
 
 Texto del servicio...

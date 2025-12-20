@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from 'astro:content';
+
+import ServiceLayout from '../../templates/ServiceLayout.astro';
+
+// 1. Generar las rutas para cada servicio
+export async function getStaticPaths() {
+  const serviceEntries = await getCollection('services');
+
+  console.log(serviceEntries)
+  return serviceEntries.map(entry => {
+        console.log(entry);
+        
+  return {
+    params: { slug: entry.slug }, 
+    props: { entry },
+  }});
+}
+
+// 2. Obtener la entrada de la prop
+const { entry: service } = Astro.props;
+
+// 3. Preparar el componente de contenido
+const { Content } = await render(service);
+
+
+
+---
+
+<ServiceLayout frontmatter={service.data}>
+  <Content />
+</ServiceLayout>
+
+<style>
+  article {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+</style>

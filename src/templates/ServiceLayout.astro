@@ -1,6 +1,5 @@
 ---
-// src/templates/ServiceLayout.astro
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro';
 const { frontmatter } = Astro.props;
 ---
 
@@ -8,7 +7,7 @@ const { frontmatter } = Astro.props;
   title={`${frontmatter.title} | Joshep Manuel Macha Rutti`} 
   description={frontmatter.description}>
   
-  <main class="min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-muted dark:from-gray-900 dark:to-gray-800">
+  <main class="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <!-- Encabezado del servicio -->
       <div class="text-center mb-12">
@@ -36,7 +35,7 @@ const { frontmatter } = Astro.props;
       )}
 
       <!-- Contenido del servicio -->
-      <div class="prose dark:prose-invert prose-lg max-w-none">
+      <div class="dark:text-white">
         <slot />
       </div>
 
@@ -44,7 +43,11 @@ const { frontmatter } = Astro.props;
       <div class="mt-12 text-center">
         <a 
           href="/services" 
-          class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-accent hover:bg-accent/90 transition-colors duration-200 dark:bg-cyan-600 dark:hover:bg-cyan-700"
+          class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md transition-all duration-200
+                /* Estilos Light Mode */
+                text-white bg-gray-600 hover:bg-gray-700 shadow-sm
+                /* Estilos Dark Mode */
+                dark:bg-cyan-600 dark:hover:bg-cyan-500 dark:text-white dark:shadow-cyan-900/20"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
@@ -55,53 +58,5 @@ const { frontmatter } = Astro.props;
     </div>
   </main>
 
-  <style>
-    /* Estilos para el contenido markdown */
-    .prose {
-      color: var(--color-foreground);
-    }
-    .prose h2, 
-    .prose h3, 
-    .prose h4 {
-      color: var(--color-foreground);
-      margin-top: 2em;
-      margin-bottom: 0.8em;
-    }
-    .prose p {
-      margin-bottom: 1.2em;
-      line-height: 1.7;
-    }
-    .prose ul, 
-    .prose ol {
-      margin-bottom: 1.5em;
-      padding-left: 1.5em;
-    }
-    .prose li {
-      margin-bottom: 0.5em;
-    }
-    .prose a {
-      color: var(--color-accent);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .prose a:hover {
-      text-decoration: underline;
-    }
-    .prose strong {
-      color: var(--color-foreground);
-    }
-    .prose code {
-      background-color: var(--color-muted);
-      padding: 0.2em 0.4em;
-      border-radius: 0.25em;
-      font-size: 0.9em;
-    }
-    .prose pre {
-      background-color: var(--color-muted);
-      padding: 1em;
-      border-radius: 0.5em;
-      overflow-x: auto;
-      margin: 1.5em 0;
-    }
-  </style>
+ 
 </Layout>

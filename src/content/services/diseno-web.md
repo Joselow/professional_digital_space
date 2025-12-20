@@ -1,13 +1,10 @@
 ---
 title: "Diseño Web Profesional"
-description: "Diseños web modernos, responsivos y centrados en el usuario que cautivan a tu audiencia."
+excerpt: "Diseños web modernos, responsivos y centrados en el usuario que cautivan a tu audiencia."
 icon: "💻"
-featuredImage: "/images/services/web-design.jpg"
-date: "2025-12-19"
-tags:
-  - diseño web
-  - desarrollo
-  - ui/ux
+featuredImage: "/images/services/web-dev.jpg"
+order: 1
+star: true
 ---
 
 ## Transforma tu presencia en línea
