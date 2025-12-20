@@ -1,0 +1,28 @@
+---
+// src/pages/services/[slug]/index.astro
+import ServiceLayout from '../../../templates/ServiceLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Obtener el slug de la URL
+const { slug } = Astro.params;
+
+// Obtener todos los servicios
+const allServices = await getCollection('services');
+
+// Encontrar el servicio actual
+const service = allServices.find(service => 
+  service.slug === slug
+);
+
+// Si no se encuentra el servicio, redirigir a la página 404
+if (!service) {
+  return Astro.redirect('/404');
+}
+
+// Obtener el contenido del servicio
+const { Content } = await service.render();
+---
+
+<ServiceLayout frontmatter={service.data}>
+  <Content />
+</ServiceLayout>

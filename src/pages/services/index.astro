@@ -1,0 +1,151 @@
+---
+// src/pages/services/index.astro
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+
+const pageTitle = 'Servicios | Joshep Manuel Macha Rutti';
+const pageDescription = 'Descubre los servicios profesionales que ofrezco para impulsar tu presencia digital y resolver tus desafíos tecnológicos.';
+
+// Datos de los servicios (luego los moveremos a archivos markdown)
+const starServices = [
+  {
+    title: 'Diseño Web',
+    description: 'Diseños modernos y responsivos que se adaptan a cualquier dispositivo.',
+    icon: '💻',
+    slug: 'diseno-web'
+  },
+  {
+    title: 'Desarrollo Frontend',
+    description: 'Interactividad y experiencia de usuario excepcionales con las últimas tecnologías.',
+    icon: '🛠️',
+    slug: 'desarrollo-frontend'
+  },
+  {
+    title: 'Optimización SEO',
+    description: 'Mejora tu visibilidad en buscadores y atrae más tráfico orgánico.',
+    icon: '🔍',
+    slug: 'seo-optimizacion'
+  }
+];
+
+const moreServices = [
+  {
+    title: 'Consultoría Tecnológica',
+    description: 'Asesoramiento experto para tomar las mejores decisiones tecnológicas.',
+    icon: '💡',
+    slug: 'consultoria-tecnologica'
+  },
+  {
+    title: 'Mantenimiento Web',
+    description: 'Mantenimiento continuo para mantener tu sitio actualizado y seguro.',
+    icon: '⚙️',
+    slug: 'mantenimiento-web'
+  },
+  {
+    title: 'Tiendas en Línea',
+    description: 'Soluciones de comercio electrónico para vender tus productos en línea.',
+    icon: '🛒',
+    slug: 'tiendas-online'
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <main class="min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-muted dark:from-gray-900 dark:to-gray-800">
+    <div class="max-w-7xl mx-auto">
+      <!-- Encabezado -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground dark:text-white mb-4">
+          Mis Servicios
+        </h1>
+        <p class="text-xl text-muted-foreground dark:text-gray-300 max-w-3xl mx-auto">
+          Soluciones digitales personalizadas para impulsar tu presencia en línea
+        </p>
+      </div>
+
+      <!-- Servicios Estrella -->
+      <section class="mb-20">
+        <h2 class="text-2xl font-semibold text-foreground dark:text-white mb-8 flex items-center">
+          <span class="w-1 h-8 bg-accent dark:bg-cyan-500 mr-3 rounded-full"></span>
+          SERVICIOS ESTRELLA
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {starServices.map(service => (
+            <a 
+              href={`/services/${service.slug}`}
+              class="block group"
+              aria-label={`Ver detalles sobre ${service.title}`}
+            >
+              <div class="h-full p-6 rounded-xl border border-border dark:border-gray-700 bg-card dark:bg-gray-800 hover:bg-accent/10 dark:hover:bg-gray-700/50 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="text-4xl mb-4">{service.icon}</div>
+                <h3 class="text-xl font-semibold text-foreground dark:text-white mb-2">
+                  {service.title}
+                </h3>
+                <p class="text-muted-foreground dark:text-gray-300">
+                  {service.description}
+                </p>
+                <div class="mt-4 text-accent dark:text-cyan-500 font-medium flex items-center">
+                  Ver más
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Más Servicios -->
+      <section>
+        <h2 class="text-2xl font-semibold text-foreground dark:text-white mb-8 flex items-center">
+          <span class="w-1 h-8 bg-accent dark:bg-cyan-500 mr-3 rounded-full"></span>
+          MÁS SERVICIOS
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+          moreServices.map(service => (
+            <a 
+              href={`/services/${service.slug}`}
+              class="block group"
+              aria-label={`Ver detalles sobre ${service.title}`}
+            >
+              <div class="h-full p-6 rounded-xl border border-border dark:border-gray-700 bg-card dark:bg-gray-800 hover:bg-accent/10 dark:hover:bg-gray-700/50 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="text-4xl mb-4">{service.icon}</div>
+                <h3 class="text-xl font-semibold text-foreground dark:text-white mb-2">
+                  {service.title}
+                </h3>
+                <p class="text-muted-foreground dark:text-gray-300">
+                  {service.description}
+                </p>
+                <div class="mt-4 text-accent dark:text-cyan-500 font-medium flex items-center">
+                  Ver más
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+             ))}
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Estilos específicos para la página de servicios */
+  .service-card {
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+  }
+  
+  .service-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark .service-card:hover {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  }
+</style>

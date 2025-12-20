@@ -1,0 +1,107 @@
+---
+// src/templates/ServiceLayout.astro
+import Layout from '../../layouts/Layout.astro';
+const { frontmatter } = Astro.props;
+---
+
+<Layout 
+  title={`${frontmatter.title} | Joshep Manuel Macha Rutti`} 
+  description={frontmatter.description}>
+  
+  <main class="min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-muted dark:from-gray-900 dark:to-gray-800">
+    <div class="max-w-4xl mx-auto">
+      <!-- Encabezado del servicio -->
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 dark:bg-cyan-500/10 mb-6">
+          <span class="text-4xl">{frontmatter.icon}</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground dark:text-white mb-4">
+          {frontmatter.title}
+        </h1>
+        <p class="text-xl text-muted-foreground dark:text-gray-300 max-w-3xl mx-auto">
+          {frontmatter.description}
+        </p>
+      </div>
+
+      <!-- Imagen destacada -->
+      {frontmatter.featuredImage && (
+        <div class="mb-12 rounded-xl overflow-hidden shadow-xl">
+          <img 
+            src={frontmatter.featuredImage} 
+            alt={frontmatter.title}
+            class="w-full h-auto object-cover"
+            loading="lazy"
+          />
+        </div>
+      )}
+
+      <!-- Contenido del servicio -->
+      <div class="prose dark:prose-invert prose-lg max-w-none">
+        <slot />
+      </div>
+
+      <!-- Botón de regreso -->
+      <div class="mt-12 text-center">
+        <a 
+          href="/services" 
+          class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-accent hover:bg-accent/90 transition-colors duration-200 dark:bg-cyan-600 dark:hover:bg-cyan-700"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+          </svg>
+          Volver a servicios
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    /* Estilos para el contenido markdown */
+    .prose {
+      color: var(--color-foreground);
+    }
+    .prose h2, 
+    .prose h3, 
+    .prose h4 {
+      color: var(--color-foreground);
+      margin-top: 2em;
+      margin-bottom: 0.8em;
+    }
+    .prose p {
+      margin-bottom: 1.2em;
+      line-height: 1.7;
+    }
+    .prose ul, 
+    .prose ol {
+      margin-bottom: 1.5em;
+      padding-left: 1.5em;
+    }
+    .prose li {
+      margin-bottom: 0.5em;
+    }
+    .prose a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .prose a:hover {
+      text-decoration: underline;
+    }
+    .prose strong {
+      color: var(--color-foreground);
+    }
+    .prose code {
+      background-color: var(--color-muted);
+      padding: 0.2em 0.4em;
+      border-radius: 0.25em;
+      font-size: 0.9em;
+    }
+    .prose pre {
+      background-color: var(--color-muted);
+      padding: 1em;
+      border-radius: 0.5em;
+      overflow-x: auto;
+      margin: 1.5em 0;
+    }
+  </style>
+</Layout>
