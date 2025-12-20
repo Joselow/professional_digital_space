@@ -4,11 +4,11 @@ import CardService from '../../components/CardService.astro';
 import Layout from '../../layouts/Layout.astro';
 
 const star = ({ data }: CollectionEntry<'services'>) => {  
-  return data.star === true;
+  return data.star === true && data.active === true;
 }
 
 const nonstar = ({ data }: CollectionEntry<'services'>) => {  
-  return data.star === false;
+  return data.star === false && data.active === true;
 }
 
 const starServices = (await getCollection('services', star)).sort((a, b) => a.data.order - b.data.order);

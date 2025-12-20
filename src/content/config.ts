@@ -9,6 +9,7 @@ const servicesCollection = defineCollection({
     featuredImage: z.string().optional(), // .optional() si no siempre hay imagen
     order: z.number(),
     star: z.boolean().default(false), // default por si olvidas ponerlo
+    active: z.boolean().default(false), // default por si olvidas ponerlo
   }),
 });
 

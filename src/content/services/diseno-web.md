@@ -5,6 +5,7 @@ icon: "💻"
 featuredImage: "/images/services/web-dev.jpg"
 order: 1
 star: true
+active: false
 ---
 
 ## Transforma tu presencia en línea
@@ -17,7 +18,7 @@ En la era digital actual, tu sitio web es la puerta de entrada a tu negocio. Un 
 - **Sitios completamente responsivos** que lucen increíbles en todos los dispositivos
 - **Optimización de velocidad** para una experiencia de usuario excepcional
 - **Diseño centrado en el usuario (UI/UX)** que mejora la conversión
-- **Integración con redes sociales** para maximizar tu alcance
+- **Integración con redes sociales** para maximizar tu alcance  
 
 ## Proceso de trabajo
 

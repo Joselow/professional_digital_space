@@ -5,6 +5,7 @@ icon: "💻"
 featuredImage: "/images/services/web-design.jpg"
 order: 2
 star: false
+active: false
 ---
 
 Texto del servicio...
