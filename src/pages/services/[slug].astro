@@ -7,9 +7,7 @@ import ServiceLayout from '../../templates/ServiceLayout.astro';
 export async function getStaticPaths() {
   const serviceEntries = await getCollection('services');
 
-  console.log(serviceEntries)
   return serviceEntries.map(entry => {
-        console.log(entry);
         
   return {
     params: { slug: entry.slug }, 
@@ -22,8 +20,6 @@ const { entry: service } = Astro.props;
 
 // 3. Preparar el componente de contenido
 const { Content } = await render(service);
-
-
 
 ---
 
