@@ -8,7 +8,7 @@ import profileImage from '../assets/images/profile.jpg';
 const currentYear = new Date().getFullYear();
 const profileName = "Joshep Manuel Macha Rutti";
 
-const links = {
+export const links = {
 	servicios: "/services",
 	herramientas: "#herramientas",
 	portafolio: "https://portfolio.joselow.space",
@@ -102,7 +102,7 @@ const links = {
             <svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 112-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
             </svg>
-            Conoce mis proyectos y desarrollos en distintos ámbitos.
+            Tutoriales de programación, desarrollo de software y proyectos para crecer como desarrollador.
           </Card>
 
           <!-- Card 3: Redes Sociales -->
@@ -147,7 +147,9 @@ const links = {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
             <h3 class="text-lg font-bold mb-2">{profileName}</h3>
-            <p class="text-black/70 dark:text-gray-400">© {currentYear}. Desarrollado por JoselowDev</p>
+            <p class="text-black/70 dark:text-gray-400">© {currentYear}. Desarrollado por 
+            <a href="https://github.com/Joselow" target="_blank" rel="noopener noreferrer" class="text-cyan-600 dark:text-cyan-400 hover:underline">Joselow</a>
+            </p>
           </div>
 
           <div>
@@ -158,13 +160,13 @@ const links = {
               <a href={links.herramientas }class="text-black/70 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm">
                 Herramientas
               </a>
-			<a href={links.portafolio} class="text-black/70 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm">
+			<a href={links.portafolio} target="_blank" rel="noopener noreferrer" class="text-black/70 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm">
                 Portafolio
               </a>
-              <a href={links.youtube} class="text-black/70 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm">
+              <a href={links.youtube} target="_blank" rel="noopener noreferrer" class="text-black/70 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm">
 				Canal Youtube
               </a>
-              <a href={links.whatsapp} class="text-black/70 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm">
+              <a href={links.whatsapp} target="_blank" rel="noopener noreferrer" class="text-black/70 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors text-sm">
                 Contacto
               </a>
             </nav>
