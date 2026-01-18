@@ -12,50 +12,85 @@ const groupData = {
 ---
 
 <Layout>
-       <div class=" max-w-2xl mx-auto">
-        <a href="/services/clases-programacion-en-vivo" 
-        class="inline-flex items-center text-gray-200 hover:text-gray-300 mt-10 mb-4">
-          <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-          </svg>
-          Volver a Cursos
-        </a>
-        
-        <div class=" rounded-xl shadow-md overflow-hidden">
-          <div class="p-8">
-            <h1 class=" text-3xl font-bold  mb-2">GRUPO: JS-2602 "Compromiso"</h1>
-            <p class="">Únete a nuestro próximo programa de formación
+  <div class="max-w-2xl mx-auto px-4">
+    <a
+      href="/services/clases-programacion-en-vivo"
+      class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-gray-500 dark:text-gray-300 dark:hover:text-gray-200 mt-10 mb-4 transition-colors"
+    >
+      <svg
+        class="w-5 h-5 mr-1"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+        ></path>
+      </svg>
+      Volver a Cursos
+    </a>
+
+    <div
+      class="rounded-2xl  bg-white/80   overflow-hidden dark:bg-slate-900/80  backdrop-blur"
+    >
+      <div class="p-8 space-y-6">
+        <div class="space-y-2">
+          <h1
+            class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50"
+          >
+            GRUPO: JS-2602 "Compromiso"
+          </h1>
+          <p class="text-sm text-slate-600 dark:text-slate-300">
+            Únete a nuestro próximo programa de formación
+          </p>
+          <p class="text-center">
+            <strong
+              class="text-amber-600 dark:text-amber-300 text-xl font-semibold"
+            >
+              "JavaScript Profesional - Fundamentos Sólidos"
+            </strong>
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <GroupCard
+            groupName={groupData.name}
+            currentStudents={groupData.currentStudents}
+            whatsappLink={groupData.whatsappLink}
+            enrollmentText={groupData.description}
+          />
+
+          <div
+            class="mt-2 rounded-xl border border-amber-500/30 bg-amber-50 px-4 py-3 dark:bg-amber-500/10 dark:border-amber-500/30"
+          >
+            <h3 class="font-semibold text-amber-800 dark:text-amber-200 mb-1.5">
+              📅 Próximo inicio
+            </h3>
+            <p class="text-sm text-amber-800 dark:text-amber-100">
+              Lunes 5 de Febrero, 2026 - 8:00 PM (GMT-5)
             </p>
-            <p class="text-center">
-              <strong class="text-yellow-400 text-xl font-bold">
-                "JavaScript Profesional - Fundamentos Sólidos"
-              </strong>
-            </p>
-            
-            <div class="space-y-6 mt-4">
-              <GroupCard 
-                groupName={groupData.name}
-                currentStudents={groupData.currentStudents}
-                whatsappLink={groupData.whatsappLink}
-                enrollmentText={groupData.description}
-              />
-              
-              <div class="mt-4 bg-blue-50 p-4 rounded-lg">
-                <h3 class="font-semibold text-blue-800 mb-2">📅 Próximo inicio</h3>
-                <p class="text-blue-700">Lunes 5 de Febrero, 2026 - 8:00 PM (GMT-5)</p>
-              </div>
-              
-              <div class="prose max-w-none">
-                <h3 class="text-xl font-semibold  mb-3">¿Qué incluye?</h3>
-                <ul class="space-y-2">
-                  <li>✅ 8 sesiones en vivo de 2 horas cada una</li>
-                  <li>✅ Sesiones en vivo</li>
-                  <li>✅ Enfoque práctico</li>
-                  <li>✅ Acceso a comunidad y al grupo privado</li>
-                </ul>
-              </div>
-            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h3
+              class="text-xl font-semibold text-slate-900 dark:text-slate-50"
+            >
+              ¿Qué incluye?
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-200">
+              <li>✅ 8 sesiones en vivo de 2 horas cada una</li>
+              <li>✅ Contenido profesional y pensamiento lógico</li>
+              <li>✅ Acceso a comunidad y al grupo privado</li>
+              <li>✅ Todas las sesiones en vivo</li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 </Layout>
+

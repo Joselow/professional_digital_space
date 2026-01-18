@@ -5,21 +5,108 @@ const {
   icon,
   href = "#",
   target = "_self",
-  rel = ""
+  rel = "",
+  color = "cyan"
 } = Astro.props;
+
+const colorMap = {
+  cyan: {
+    bgLight: 'bg-cyan-100',
+    bgDark: 'dark:bg-cyan-900/30',
+    textLight: 'text-cyan-600',
+    textDark: 'dark:text-cyan-500',
+    hoverText: 'group-hover:text-cyan-500',
+    hoverBorder: 'dark:hover:border-cyan-500'
+  },
+  red: {
+    bgLight: 'bg-red-100',
+    bgDark: 'dark:bg-red-900/30',
+    textLight: 'text-red-600',
+    textDark: 'dark:text-red-500',
+    hoverText: 'group-hover:text-red-500',
+    hoverBorder: 'dark:hover:border-red-500'
+  },
+  green: {
+    bgLight: 'bg-green-100',
+    bgDark: 'dark:bg-green-900/30',
+    textLight: 'text-green-600',
+    textDark: 'dark:text-green-500',
+    hoverText: 'group-hover:text-green-500',
+    hoverBorder: 'dark:hover:border-green-500'
+  },
+  indigo: {
+    bgLight: 'bg-indigo-100',
+    bgDark: 'dark:bg-indigo-900/30',
+    textLight: 'text-indigo-600',
+    textDark: 'dark:text-indigo-500',
+    hoverText: 'group-hover:text-indigo-500',
+    hoverBorder: 'dark:hover:border-indigo-500'
+  },
+  blue: {
+    bgLight: 'bg-blue-100',
+    bgDark: 'dark:bg-blue-900/30',
+    textLight: 'text-blue-600',
+    textDark: 'dark:text-blue-500',
+    hoverText: 'group-hover:text-blue-500',
+    hoverBorder: 'dark:hover:border-blue-500'
+  },
+  yellow: {
+    bgLight: 'bg-yellow-100',
+    bgDark: 'dark:bg-yellow-900/30',
+    textLight: 'text-yellow-700',
+    textDark: 'dark:text-yellow-500',
+    hoverText: 'group-hover:text-yellow-500',
+    hoverBorder: 'dark:hover:border-yellow-500'
+  },
+  purple: {
+    bgLight: 'bg-purple-100',
+    bgDark: 'dark:bg-purple-900/30',
+    textLight: 'text-purple-600',
+    textDark: 'dark:text-purple-500',
+    hoverText: 'group-hover:text-purple-500',
+    hoverBorder: 'dark:hover:border-purple-500'
+  },
+  pink: {
+    bgLight: 'bg-pink-100',
+    bgDark: 'dark:bg-pink-900/30',
+    textLight: 'text-pink-600',
+    textDark: 'dark:text-pink-500',
+    hoverText: 'group-hover:text-pink-500',
+    hoverBorder: 'dark:hover:border-pink-500'
+  },
+  orange: {
+    bgLight: 'bg-orange-100',
+    bgDark: 'dark:bg-orange-900/30',
+    textLight: 'text-orange-600',
+    textDark: 'dark:text-orange-500',
+    hoverText: 'group-hover:text-orange-500',
+    hoverBorder: 'dark:hover:border-orange-500'
+  },
+  teal: {
+    bgLight: 'bg-teal-100',
+    bgDark: 'dark:bg-teal-900/30',
+    textLight: 'text-teal-600',
+    textDark: 'dark:text-teal-500',
+    hoverText: 'group-hover:text-teal-500',
+    hoverBorder: 'dark:hover:border-teal-500'
+  }
+};
+
+const currentColor = colorMap[color] || colorMap.cyan;
+
 ---
 
 <a
   href={href}
   target={target}
   rel={rel}
-  class="group px-4 py-2 rounded-xl border-4 border-gray-200 bg-white hover:shadow-lg hover:border-accent transition-all duration-300 hover:scale-105 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-cyan-500"
+  class={`group px-4 py-2 rounded-xl border-4 border-gray-200 bg-white hover:shadow-lg hover:border-accent transition-all duration-300 hover:scale-105 dark:bg-gray-800 dark:border-gray-700 ${currentColor.hoverBorder}`}
 >
   <div class="mb-2 flex items-center gap-6">
-    <div class="w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center text-cyan-600 dark:text-cyan-500">
+    <div class={`w-12 h-12 rounded-lg ${currentColor.bgLight} ${currentColor.bgDark} flex items-center justify-center ${currentColor.textLight} ${currentColor.textDark}`}>
       <slot name="icon">{icon}</slot>
     </div>
-     <h3 class="text-2xl font-bold text-foreground dark:text-white  group-hover:text-accent transition-colors">
+    <h3 class={`text-2xl font-bold text-foreground dark:text-white ${currentColor.hoverText} transition-colors`}>
     {title}
   </h3>
   </div>

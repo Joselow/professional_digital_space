@@ -3,6 +3,7 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import profileImage from '../assets/images/profile.jpg';
+import secondProfileImage from '../assets/images/secondProfile.jpg';
 
 
 const currentYear = new Date().getFullYear();
@@ -28,8 +29,8 @@ export const links = {
               <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground dark:text-white text-balance leading-tight mb-2">
                 {profileName}
               </h1>
-              <p class="text-xl sm:text-2xl text-accent dark:text-cyan-500 font-medium">
-                Orientado al crecimiento y la creación de <b>Soluciones Digitales.</b>
+              <p class="text-xl sm:text-2xl text-accent dark:text-gray-200 font-medium">
+                Orientado al crecimiento y la creación de <b class="text-black dark:text-white">Soluciones Digitales.</b>
               </p>
             </div>
 
@@ -40,13 +41,23 @@ export const links = {
             </div>
           </div>
 
-          <!-- Imagen -->
+          <!-- Carousel Automático -->
           <div class="order-1 lg:order-2 flex justify-center">
-            <img
-              src={profileImage.src}
-              alt="Joshep"
-              class="w-full max-w-sm rounded-2xl shadow-lg object-cover dark:shadow-gray-700/50"
-            />
+            <div class="relative w-full max-w-sm rounded-2xl shadow-lg overflow-hidden dark:shadow-gray-700/50">
+              <div class="carousel-container relative h-96">
+               <img
+                  src={profileImage.src}
+                  alt="Joshep - Imagen 1"
+                  class="carousel-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-400 ease-in-out"
+                />
+                <img
+                  src={secondProfileImage.src}
+                  alt="Joshep - Imagen 2"
+                  class="carousel-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-400 ease-in-out"
+                />
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -64,6 +75,7 @@ export const links = {
            <Card 
             href={links.servicios}
             title="Servicios"
+            color="cyan"
           >
             <svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -74,6 +86,7 @@ export const links = {
            <Card 
             href={links.herramientas}
             title="Herramientas y Aplicaciones Productivas"
+            color="indigo"
           >
             <svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -85,6 +98,7 @@ export const links = {
           <Card 
             href={links.portafolio}
             title="Portafolio Dev"
+            color="yellow"
 			target="_blank"
           >
             <svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -96,7 +110,8 @@ export const links = {
 		    <Card 
             href={links.youtube}
             title="Canal de Youtube"
-			target="_blank"
+            color="red"
+			      target="_blank"
           >
             <svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 112-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -121,6 +136,7 @@ export const links = {
             title="Contactame por WhatsApp"
             target="_blank"
             rel="noopener noreferrer"
+            color="green"
           >
             <svg slot="icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -134,7 +150,7 @@ export const links = {
     <!-- Frase de Cierre -->
     <section class="pt-0 pb-16 px-4 sm:px-6 lg:px-8 bg-muted ">
       <div class="max-w-5xl mx-auto text-center">
-        <p class=" text-3xl sm:text-5xl font-bold text-gray-800 dark:text-cyan-400 leading-relaxed text-balance leading-6">
+        <p class=" text-3xl sm:text-5xl font-bold text-gray-800 dark:text-gray-100 leading-relaxed text-balance leading-6">
           " Consigue la vida que imaginas, con enfoque, crecimiento y acción "
         </p>
       </div>
@@ -147,7 +163,7 @@ export const links = {
           <div>
             <h3 class="text-lg font-bold mb-2">{profileName}</h3>
             <p class="text-black/70 dark:text-gray-400">© {currentYear}. Desarrollado por 
-            <a href="https://github.com/Joselow" target="_blank" rel="noopener noreferrer" class="text-cyan-600 dark:text-cyan-400 hover:underline">Joselow</a>
+            <a href="https://github.com/Joselow" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:underline">Joselow</a>
             </p>
           </div>
 
@@ -176,4 +192,30 @@ export const links = {
         </div>
       </div>
     </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const images = document.querySelectorAll('.carousel-image') as NodeListOf<HTMLImageElement>;
+      let currentIndex = 0;
+
+      const VISIBLE_TIME = 3500;    // tiempo fija cada imagen
+      const FADE_TIME = 400;        // debe coincidir con duration-300
+      const TOTAL_TIME = VISIBLE_TIME + FADE_TIME;
+
+      function showNextImage() {
+        // ocultar actual
+        images[currentIndex].style.opacity = '0';
+
+        // siguiente índice
+        currentIndex = (currentIndex + 1) % images.length;
+
+        // mostrar siguiente
+        images[currentIndex].style.opacity = '1';
+      }
+
+      // primera imagen ya está visible, esperamos 3s + fade para cambiar
+      setInterval(showNextImage, TOTAL_TIME);
+    });
+
+    </script>
 </Layout>
