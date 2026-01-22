@@ -5,7 +5,7 @@ icon: "🧩"
 featuredImage: "/images/services/software-medida.png"
 order: 5
 star: false
-active: true
+active: false
 ---
 
 ## Soluciones tecnológicas que se adaptan a tu negocio

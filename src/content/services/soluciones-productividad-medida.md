@@ -5,7 +5,7 @@ icon: "⚙️"
 featuredImage: "/images/services/flow-productividad.png"
 order: 6
 star: false
-active: true
+active: false
 ---
 
 ## Automatiza tareas repetitivas y aumenta tu productividad

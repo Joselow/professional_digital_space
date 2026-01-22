@@ -5,7 +5,7 @@ icon: "🎓"
 featuredImage: "/images/services/lms.png"
 order: 2
 star: true
-active: true
+active: false
 ---
 
 ## Transforma tu conocimiento en un negocio digital exitoso

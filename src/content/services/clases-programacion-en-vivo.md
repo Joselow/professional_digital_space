@@ -15,18 +15,27 @@ Aprende a desarrollar y mejorar tus habilidades con sesiones teoricas y práctic
 
 
 ### 🚀 Programas de Formación que ofrezco
+
+</br></br>
+
+---
+
+**INICIANTES - Puerta de Entrada al Software**      </br>
+*Para personas que están aprendiendo y quieren consolidar su base*      
+**Desarrollo de Bases Sólidas en Desarrollo**    
+</br>
+
 **1. JavaScript Profesional – Fundamentos Sólidos**  
 
-💰 **Grupal (Cohorte):**  S/100   
+💰 **Grupal (Cohorte):**  S/40  
 🗓 **Duración:** 4 semanas  
 ⏱ **Sesiones:** 8 sesiones de 2 horas    
- 📌  Vacantes limitadas: **Solo 20 alumnos**
+ 📌  Vacantes limitadas: **Solo 15 alumnos**
 <p class="mt-3"></p>
 
-👤 **1 a 1 Privado (Premium): S/ 180**     
+👤 **1 a 1 Privado (Premium): S/ 100**     
 <p class="mt-3"></p>
-
-Nivel básico a intermedio, orientado a práctica real y desarrollo profesional.
+Fundamentos de JavaScript, lógica de programación y práctica guiada para construir una base sólida en programación.
 </br>
 
 <div class="text-center mt-6 flex justify-center">
@@ -55,38 +64,107 @@ Nivel básico a intermedio, orientado a práctica real y desarrollo profesional.
 </br>
 </br>
 
+
 **2. JavaScript Profesional – Proyecto 100% Práctico**  
-💰 **Grupal (Cohorte):**  S/200  
+💰 **Grupal (Cohorte):**  S/100  
 🗓 **Duración:** 4 semanas  
 ⏱ **Sesiones:** 8 sesiones de 2 horas    
-📌  Vacantes limitadas: **Solo 15 alumnos**
+👤 **1 a 1 Privado (Premium): Disponible solo por invitación o evaluación previa.**     
 <p class="mt-3"></p>
 
-👤 **1 a 1 Privado (Premium): S/ 360**     
+<p class="mt-3"></p>
+Desarrollo guiado de proyectos reales para consolidar conocimientos y reforzar el aprendizaje mediante la práctica.
+</br>
+</br>
+</br>
+
+**3. Control de Versiones con Git y GitHub – Fundamentos Sólidos**  
+
+💰 **Grupal (Cohorte):**  S/100  
+🗓 **Duración:** 2 semanas  
+⏱ **Sesiones:** 4 sesiones de 2 horas    
+<!-- 📌  Vacantes limitadas: **Solo 20 alumnos** -->
 <p class="mt-3"></p>
 
-Nivel intermedio, enfocado en desarrollo de proyectos reales y práctica intensiva.
+Uso profesional de Git y GitHub para trabajo colaborativo y control de versiones.
 </br>
 </br>
 </br>
 
-**3. Vue.js 3 Profesional – Fundamentos Sólidos**  
+**4. Bases de Datos Relacional (SQL) – Fundamentos Sólidos**  
 
-💰 **Grupal (Cohorte):**  S/300  
+💰 **Grupal (Cohorte):**  S/140  
+🗓 **Duración:** 2 semanas  
+⏱ **Sesiones:** 4 sesiones de 2 horas    
+<!-- 📌  Vacantes limitadas: **Solo 15 alumnos** -->
+<p class="mt-3"></p>
+
+Fundamentos y uso práctico de bases de datos relacionales para aplicaciones reales.
+</br>
+</br>
+</br>
+
+**5. Despliegue y Hosting de Aplicaciones Web**  
+
+💰 **Grupal (Cohorte):**  S/80  
+🗓 **Duración:** 1 semana  
+⏱ **Sesiones:** 2 sesiones de 2 horas    
+<p class="mt-3"></p>
+
+Despliegue real de aplicaciones web con buenas prácticas de producción.
+
+</br>
+</br>
+</br>
+
+---
+**PROFESIONALES - Dominio Acelerado de Lenguaje**      
+*Para profesionales que necesitan aprender un nuevo lenguaje rápido*       
+**Evolución de Stack Profesional**      
+</br>
+
+Dirigidos a desarrolladores con      
+
+1. Experiencia previa.   
+2. Conocimientos sólidos de programación.  
+3. Disponibilidad para aprender rápido.
+
+</br>
+
+ <!-- **1. JavaScript Profesional – Fundamentos Sólidos**  
+
+💰 **Grupal (Cohorte):**  S/100   
 🗓 **Duración:** 4 semanas  
 ⏱ **Sesiones:** 8 sesiones de 2 horas    
-📌  Vacantes limitadas: **Solo 15 alumnos**
+ 📌  Vacantes limitadas: **Solo 20 alumnos**
 <p class="mt-3"></p>
 
-👤 **1 a 1 Privado (Premium): S/ 540**     
+👤 **1 a 1 Privado (Premium): S/ 180**     
 <p class="mt-3"></p>
 
-Nivel básico a intermedio, desde cero hasta comprender la arquitectura de aplicaciones en Vue.
+Nivel básico a intermedio, orientado a práctica real y desarrollo profesional.
+</br>
+</br>
+</br> -->
+
+
+
+**1. Vue.js 3 Profesional – Fundamentos Sólidos**  
+
+💰 **Grupal (Cohorte):** 
+🗓 **Duración:** 4 semanas  
+⏱ **Sesiones:** 8 sesiones de 2 horas    
+<!-- 📌  Vacantes limitadas: **Solo 15 alumnos** -->
+<p class="mt-3"></p>
+
+<!-- 👤 **1 a 1 Privado (Premium): S/ 540**      -->
+<p class="mt-3"></p>
+Comprensión sólida de Vue 3, su ecosistema para desarrollo de aplicaciones modernas.
 </br>
 </br>
 </br>
 
-**4. Vue.js 3 Profesional – Proyecto 100% Práctico**  
+<!--**3. Vue.js 3 Profesional – Proyecto 100% Práctico**  
 
 💰 **Grupal (Cohorte):**  S/600  
 🗓 **Duración:** 4 semanas  
@@ -97,89 +175,51 @@ Nivel básico a intermedio, desde cero hasta comprender la arquitectura de aplic
 👤 **1 a 1 Privado (Premium): S/ 1080**     
 <p class="mt-3"></p>
 
-Nivel intermedio, orientado a la construcción de aplicaciones completas y proyectos reales.
+Orientado a la construcción de arquitecturas completas y proyectos reales.
 </br>
 </br>
-</br>
+</br> -->
 
-**5. Bases de Datos Relacional (SQL) – Fundamentos Sólidos**  
+---
 
-💰 **Grupal (Cohorte):**  S/200  
-🗓 **Duración:** 2 semanas  
-⏱ **Sesiones:** 4 sesiones de 2 horas    
-📌  Vacantes limitadas: **Solo 20 alumnos**
-<p class="mt-3"></p>
-
-Fundamentos y uso práctico de bases de datos relacionales para aplicaciones reales.
-</br>
-</br>
-</br>
-
-**6. Control de Versiones con Git y GitHub – Fundamentos Sólidos**  
-
-💰 **Grupal (Cohorte):**  S/120  
-🗓 **Duración:** 2 semanas  
-⏱ **Sesiones:** 4 sesiones de 2 horas    
-📌  Vacantes limitadas: **Solo 20 alumnos**
-<p class="mt-3"></p>
-
-Uso profesional de Git y GitHub para trabajo colaborativo y control de versiones.
-</br>
-</br>
-</br>
-
-**7. Despliegue y Hosting de Aplicaciones Web**  
-
-💰 **Grupal (Cohorte):**  S/200  
-🗓 **Duración:** 1 semana  
-⏱ **Sesiones:** 2 sesiones de 2 horas    
-📌  Vacantes limitadas: **Solo 15 alumnos**
-<p class="mt-3"></p>
-
-Despliegue real de aplicaciones web con buenas prácticas de producción.
-</br>
-</br>
-</br>
-</br>
-
-### 📌 ¿Qué incluye?
+### 📌 ¿Qué incluyen los Programas de Formación?
 - **Aprendizaje por grupos/cohortes** avanzas junto a un grupo con objetivos claros.
 - **Sesiones en vivo** soluciones de dudas en tiempo real.
-- **Proyectos reales** proyectos, ejercicios y retos.
-- **Enfoque práctico** práctica real desde el primer día.
+- **Proyectos y ejercicios prácticos:** aplicas lo aprendido en casos reales.
+- **Enfoque práctico desde el primer día:** menos teoría innecesaria.
 - **Herramientas para pensar**, no solo programar.
 - **Acceso a la comunidad de WhatsApp** para consultas, apoyo y networking.
 </br>
 </br>
 
 ### 📌 Clases 1 a 1 Privada (Premium), Incluye
-- **Ritmo y contenido adaptado a ti**
-- **Resolución de problemas reales**
-- **Mentoría directa**
+- **Ritmo y contenido 100% adaptado a ti**
+- **Resolución de problemas reales y específicos**
+- **Mentoría directa y personalizada**
 - **Enfoque en tus objetivos personales o profesionales**
 - **Seguimiento cercano entre sesiones**
 
-> *"Este servicio es ideal si buscas resultados más rápidos y atención exclusiva."*
+<br/>
 
+> *Este servicio está orientado a personas que buscan avanzar más rápido con atención exclusiva.  
+Disponible solo por invitación o evaluación previa.*
 
 </br>
 </br>
+
 
 ### 📅 ¿Cómo empezar?
-1. Puedes ingresar a la clase de muestra de cualquier programa, 
 
-Únete a la comunidad de WhatsApp para recibir las instrucciones.
+1. **Únete a la comunidad de WhatsApp** para recibir información y próximas fechas.
+   
+<a class="text-green-500 hover:text-green-600" href="https://chat.whatsapp.com/BxCDoo4OKmVGxVtavLkLPu" target="_blank">**[Link a la comunidad WhatsApp🏫 JoselowDevAcademy]**</a>
 
-<a class="text-green-500 hover:text-green-600" href="https://chat.whatsapp.com/BxCDoo4OKmVGxVtavLkLPu" target="_blank">**[Link a comunidad WhatsApp 🏫 JoselowDevAcademy]**</a>
+<br/>
 
-2. Si te interesan clases privadas 1 a 1, agenda una clase de muestra.
-3. Contáctame para coordinar tu sesión privada.
+2. **Participa en una clase de muestra** del programa que te interese.
+3. Si estás interesado en **clases privadas 1 a 1**, contáctame por WhatsApp para agendar una sesión de evaluación.
 
+<br/><br/>
 
-> *"Aprenderás la teoría y la experiencia práctica resolviendo problemas reales."*
-</br>
-</br>
-
-
-📞 **¡Agenda tu clase de muestra!**
+📞 **¡Da el primer paso en tu formación en software!**
 
