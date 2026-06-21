@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/ui/Button.astro';
+import YouTubeEmbed from '../components/YouTubeEmbed.astro';
+import { links } from '../pages/index.astro';
+
+export interface ProductiveApp {
+  title: string;
+  slug: string;
+  icon: string;
+  featuredImage?: string;
+  subtitle: string;
+  excerpt: string;
+  appUrl?: string;
+  problem: string;
+  solution: string;
+  benefits: string[];
+  screenshots: { src: string; alt: string }[];
+  videos: { id: string; title: string }[];
+  technologies: string[];
+}
+
+interface Props {
+  app: ProductiveApp;
+}
+
+const { app } = Astro.props;
+
+const [featuredVideo, ...moreVideos] = app.videos;
+
+const whatsappMessage = encodeURIComponent(
+  `Hola Joshep, vi tu aplicación ${app.title} y me interesa una solución similar para mi negocio.`
+);
+const whatsappUrl = `${links.whatsapp.replace(/text=[^&]*/, `text=${whatsappMessage}`)}`;
+---
+
+<Layout title={`${app.title} | Joshep Manuel Macha Rutti`}>
+  <main class="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto space-y-20">
+
+      <!-- Hero -->
+      <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-100 via-white to-cyan-50 dark:from-gray-800 dark:via-gray-900 dark:to-cyan-950/40 border border-gray-200/60 dark:border-gray-700/60">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-cyan-400/10 via-transparent to-transparent pointer-events-none" />
+        <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-10 p-8 md:p-12 items-center">
+          <div class="space-y-6">
+            <div class="inline-flex items-center gap-3 rounded-full bg-white/80 dark:bg-gray-800/80 px-4 py-2 text-sm font-medium border border-gray-200 dark:border-gray-700 backdrop-blur-sm">
+              <span class="text-2xl">{app.icon}</span>
+              <span class="text-muted-foreground dark:text-gray-300">Aplicación productiva</span>
+            </div>
+            <div>
+              <h1 class="text-4xl md:text-5xl font-bold text-foreground dark:text-white leading-tight mb-4">
+                {app.title}
+              </h1>
+              <p class="text-lg md:text-xl text-muted-foreground dark:text-gray-300 leading-relaxed">
+                {app.subtitle}
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              {app.appUrl && (
+                <Button href={app.appUrl} target="_blank" rel="noopener noreferrer" variant="primary" size="lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  Usar aplicación
+                </Button>
+              )}
+              {app.videos.length > 0 && (
+                <Button href="#videos" variant="outline" size="lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Ver video
+                </Button>
+              )}
+            </div>
+          </div>
+          {app.featuredImage && (
+            <div class="relative">
+              <div class="absolute -inset-4 bg-cyan-500/20 dark:bg-cyan-400/10 rounded-3xl blur-2xl" />
+              <img
+                src={app.featuredImage}
+                alt={app.title}
+                class="relative w-full rounded-2xl shadow-2xl ring-1 ring-gray-200/60 dark:ring-gray-700/60 object-cover"
+                loading="eager"
+              />
+            </div>
+          )}
+        </div>
+      </section>
+
+      <!-- Problema y solución -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <article class="rounded-2xl p-8 bg-red-50/80 dark:bg-red-950/20 border border-red-200/60 dark:border-red-900/40">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400 text-xl">⚠️</span>
+            <h2 class="text-xl font-bold text-foreground dark:text-white">Problema que resuelve</h2>
+          </div>
+          <p class="text-foreground/80 dark:text-gray-300 leading-relaxed text-lg">
+            {app.problem}
+          </p>
+        </article>
+        <article class="rounded-2xl p-8 bg-cyan-50/80 dark:bg-cyan-950/20 border border-cyan-200/60 dark:border-cyan-900/40">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-100 dark:bg-cyan-900/40 text-cyan-600 dark:text-cyan-400 text-xl">💡</span>
+            <h2 class="text-xl font-bold text-foreground dark:text-white">Solución</h2>
+          </div>
+          <p class="text-foreground/80 dark:text-gray-300 leading-relaxed text-lg">
+            {app.solution}
+          </p>
+        </article>
+      </section>
+
+      <!-- Beneficios + primer video -->
+      {(app.benefits.length > 0 || featuredVideo) && (
+        <section id="videos" class="scroll-mt-24">
+          <div class="grid grid-cols-1 lg:grid-cols-6 gap-8 lg:gap-10 items-start">
+            <div class="lg:col-span-2 space-y-6">
+              <h2 class="text-2xl md:text-3xl font-bold text-foreground dark:text-white">
+                Beneficios
+              </h2>
+              <div class="space-y-3">
+                {app.benefits.map((benefit) => (
+                  <div class="flex items-start gap-3 rounded-2xl p-4 bg-white dark:bg-gray-800/60 border border-gray-200/60 dark:border-gray-700/60 shadow-sm">
+                    <span class="text-green-500 text-xl shrink-0">✅</span>
+                    <p class="font-medium text-foreground dark:text-gray-200">{benefit}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {featuredVideo && (
+              <div class="lg:col-span-4 space-y-3">
+                <YouTubeEmbed videoId={featuredVideo.id} title={featuredVideo.title} />
+                <p class="text-sm font-medium text-foreground/80 dark:text-gray-300">
+                  {featuredVideo.title}
+                </p>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      <!-- Capturas -->
+      {app.screenshots.length > 0 && (
+        <section>
+          <h2 class="text-2xl md:text-3xl font-bold text-foreground dark:text-white mb-8 text-center">
+            Screenshots de la aplicación
+          </h2>
+          <div class={`grid gap-4 ${app.screenshots.length === 1 ? 'max-w-3xl mx-auto' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'}`}>
+            {app.screenshots.map((shot, index) => (
+              <figure class={`group overflow-hidden rounded-2xl shadow-lg ring-1 ring-gray-200/60 dark:ring-gray-700/60 ${index === 0 && app.screenshots.length > 2 ? 'sm:col-span-2 lg:col-span-2' : ''}`}>
+                <img
+                  src={shot.src}
+                  alt={shot.alt}
+                  class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+                <figcaption class="px-4 py-3 text-sm text-muted-foreground dark:text-gray-400 bg-white dark:bg-gray-800/80">
+                  {shot.alt}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Videos adicionales -->
+      {moreVideos.length > 0 && (
+        <section class="scroll-mt-24">
+          <h2 class="text-2xl md:text-3xl font-bold text-foreground dark:text-white mb-3 text-center">
+            Videos usando la aplicación
+          </h2>
+          <p class="text-center text-muted-foreground dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            Mira más sobre cómo funciona {app.title}.
+          </p>
+          <div class={`grid gap-8 ${moreVideos.length > 1 ? 'md:grid-cols-2' : 'max-w-3xl mx-auto'}`}>
+            {moreVideos.map((video) => (
+              <div class="space-y-3">
+                <YouTubeEmbed videoId={video.id} title={video.title} />
+                <p class="text-sm font-medium text-foreground/80 dark:text-gray-300 text-center">
+                  {video.title}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Tecnologías -->
+      <section class="text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-foreground dark:text-white mb-3">
+          Tecnologías Empleadas
+        </h2>
+        <p class="text-muted-foreground dark:text-gray-400 mb-8 max-w-xl mx-auto">
+          Stack con el que construí esta herramienta — también disponible para tu proyecto.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          {app.technologies.map((tech) => (
+            <span class="px-4 py-2 rounded-full text-sm font-semibold bg-gray-100 dark:bg-gray-800 text-foreground dark:text-gray-200 border border-gray-200 dark:border-gray-700">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-800 to-gray-900 dark:from-cyan-950 dark:to-gray-900 p-10 md:p-14 text-center text-white">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-cyan-500/20 via-transparent to-transparent pointer-events-none" />
+        <div class="relative max-w-2xl mx-auto space-y-6">
+          <h2 class="text-3xl md:text-4xl font-bold">
+            ¿Necesitas una solución similar?
+          </h2>
+          <p class="text-lg text-gray-300 leading-relaxed">
+            Contáctame para desarrollar herramientas adaptadas a tu negocio.
+          </p>
+          <Button href={whatsappUrl} target="_blank" rel="noopener noreferrer" variant="secondary" size="lg">
+            <svg height="20" width="20" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill="currentColor" d="M437.019,74.98C388.668,26.628,324.38,0,256,0S123.333,26.628,74.98,74.98S0,187.62,0,256 c0,51.485,15.154,100.938,43.874,143.34L0.69,500.106c-1.343,3.134-0.607,6.966,1.798,9.381c2.495,2.506,6.519,3.206,9.714,1.684 l96.358-45.885C151.858,495.866,202.721,512,256,512c68.38,0,132.668-26.628,181.019-74.98C485.371,388.667,512,324.38,512,256 S485.371,123.333,437.019,74.98z"/>
+            </svg>
+            Solicitar desarrollo
+          </Button>
+        </div>
+      </section>
+
+      <!-- Volver -->
+      <div class="text-center pb-8">
+        <Button href="/productive-apps" variant="outline">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+          </svg>
+          Volver a herramientas
+        </Button>
+      </div>
+
+    </div>
+  </main>
+</Layout>

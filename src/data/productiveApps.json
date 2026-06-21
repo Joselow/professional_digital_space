@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Money Flow",
+    "slug": "money-flow",
+    "icon": "💰",
+    "featuredImage": "/images/productive-apps/money_flow.png",
+    "subtitle": "Controla tus ingresos y gastos desde cualquier dispositivo.",
+    "excerpt": "Money Flow es una app de control de gastos e ingresos personales que permite a cada usuario administrar sus cuentas, registrar movimientos por categoría y consultar su balance diario e historial financiero.",
+    "order": 1,
+    "appUrl": "https://moneyflow.joselow.space",
+    "problem": "Muchas personas registran sus gastos en papel o simplemente no saben en qué se les va el dinero cada mes.",
+    "solution": "La aplicación permite registrar gastos e ingresos diariamente y visualizar reportes históricos.",
+    "benefits": [
+      "Registro rápido",
+      "Historial completo",
+      "Exportación a Excel",
+      "Acceso desde cualquier dispositivo"
+    ],
+    "screenshots": [
+      {
+        "src": "/images/productive-apps/money_flow.png",
+        "alt": "Dashboard principal de Money Flow"
+      },
+      {
+        "src": "/images/productive-apps/transactions.png",
+        "alt": "Vista de transacciones de Money Flow"
+      },
+      {
+        "src": "/images/productive-apps/form.png",
+        "alt": "Registro de egresos en Money Flow"
+      }
+    ],
+    "videos": [
+      {
+        "id": "EWPMWQ_F9cA",
+        "title": "La app que desarrollé para gestionar mis finanzas personales"
+      },
+      {
+        "id": "tmUNekJ9ajU",
+        "title": "De una app simple a datos en Excel"
+      }
+    ],
+    "technologies": ["PostgreSQL", "JavaScript", "TypeScript", "Vue.js", "Node.js", "Express"]
+  }
+]

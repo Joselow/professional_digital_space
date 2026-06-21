@@ -1,25 +1,23 @@
 ---
 interface Props {
   service: {
-    data: {
       title: string;
       excerpt: string;
       icon: string;
       featuredImage?: string;
-      order: number;
-      star: boolean;
-    };
-    slug: string;
+      order?: number;
+      star?: boolean;
+      slug: string;
   };
 }
 
 const { service } = Astro.props;
-const { title, excerpt, icon, featuredImage } = service.data;
+const { title, excerpt, icon, featuredImage } = service;
 const slug = service.slug;
 ---
 
 <article class="border border-gray-500/30 service-card group relative overflow-hidden rounded-2xl bg-card text-card-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 dark:shadow-gray-800/10">
-  <a href={`/services/${slug}`} class="block h-full">
+  <a href={`${slug}`} class="block h-full">
     {featuredImage && (
       <div class="relative h-48 overflow-hidden">
         <img 

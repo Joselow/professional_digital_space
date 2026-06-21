@@ -1,0 +1,15 @@
+---
+import productiveApps from '../../data/productiveApps.json';
+import ProductiveAppLayout from '../../templates/ProductiveAppLayout.astro';
+
+export async function getStaticPaths() {
+  return productiveApps.map((app) => ({
+    params: { slug: app.slug },
+    props: { app },
+  }));
+}
+
+const { app } = Astro.props;
+---
+
+<ProductiveAppLayout app={app} />

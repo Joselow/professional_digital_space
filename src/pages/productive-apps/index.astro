@@ -1,0 +1,37 @@
+---
+import CardService from '../../components/CardService.astro';
+import Layout from '../../layouts/Layout.astro';
+
+import productiveApps from '../../data/productiveApps.json';
+
+const productiveAppsFiltered = productiveApps.sort((a, b) => a.order - b.order);
+
+const pageTitle = 'Servicios | Joshep Manuel Macha Rutti';
+const pageDescription = 'Descubre los servicios profesionales que ofrezco para impulsar tu presencia digital y resolver tus desafíos tecnológicos.';
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <main class="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold   mb-4">
+          Mis Herramientas y Aplicaciones Productivas
+        </h1>
+      </div>
+
+      <!-- Featured Services -->
+      {productiveAppsFiltered.length > 0 && (
+        <section class="mb-20">
+          {/* <h2 class="text-3xl font-semibold text-foreground dark:text-white mb-8 flex items-center">
+          </h2> */}
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {productiveAppsFiltered.map((productiveApp) => (
+              <CardService service={{ ...productiveApp, slug: `productive-apps/${productiveApp.slug}` }} />
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  </main>
+</Layout>
