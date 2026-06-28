@@ -17,6 +17,8 @@ const moreServices = (await getCollection('services', nonstar)).sort((a, b) => a
 
 const pageTitle = 'Servicios | Joshep Manuel Macha Rutti';
 const pageDescription = 'Descubre los servicios profesionales que ofrezco para impulsar tu presencia digital y resolver tus desafíos tecnológicos.';
+
+const servicesSlug = 'services';
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
@@ -37,7 +39,7 @@ const pageDescription = 'Descubre los servicios profesionales que ofrezco para i
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {starServices.map((service) => (
-              <CardService service={{...service.data, slug: `/services/${service.slug}`}} />
+              <CardService service={{...service.data, slug: `/${servicesSlug}/${service.slug}`}} />
             ))}
           </div>
         </section>
@@ -51,7 +53,7 @@ const pageDescription = 'Descubre los servicios profesionales que ofrezco para i
           </h3>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {moreServices.map((service) => (
-              <CardService service={{...service.data, slug: `services/${service.slug}`}} />
+              <CardService service={{...service.data, slug: `/${servicesSlug}/${service.slug}`}} />
             ))}
           </div>
         </section>

@@ -8,3 +8,6 @@ speecth un embudo.
 6. Reconocimiento pequeño, imagen o pdf para los alumnos.
 7. Mostrar a la gente esto.
 
+
+
+scp -r D:\PORTAFOLIOOOOOO\PROYECTOS\profile\dist deploy@157.173.118.237:/var/www/digital_space
