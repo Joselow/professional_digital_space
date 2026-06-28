@@ -20,14 +20,27 @@ const pageDescription = 'Descubre los servicios profesionales que ofrezco para i
         </h1>
       </div>
 
+      <section>
+        <p>
+          Esta es una colección de aplicaciones y sistemas que desarrollé para optimizar mi trabajo, organización y productividad diaria.
+          <br>
+          Las comparto porque pueden ser útiles para otras personas y empresas
+
+          <br>
+          <br> Cada aplicación está diseñada con un propósito claro: ahorrar tiempo, automatizar procesos y mejorar la productividad.
+          <br>
+          Si buscas una solución similar o tienes una idea en mente, estaré encantado de ayudarte a desarrollarla.
+        </p>
+      </section>
+
       <!-- Featured Services -->
       {productiveAppsFiltered.length > 0 && (
-        <section class="mb-20">
+        <section class="mb-20 mt-10">
           {/* <h2 class="text-3xl font-semibold text-foreground dark:text-white mb-8 flex items-center">
           </h2> */}
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {productiveAppsFiltered.map((productiveApp) => (
-              <CardService service={{ ...productiveApp, slug: `productive-apps/${productiveApp.slug}` }} />
+              <CardService service={{ ...productiveApp, slug: `/productive-apps/${productiveApp.slug}` }} />
             ))}
           </div>
         </section>
